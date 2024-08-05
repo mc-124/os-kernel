@@ -1,0 +1,40 @@
+{
+    "make_img":{
+        "outdir":"out",
+        "command1":[],
+        "command2":[],
+        "var":{},
+        "items":{
+            "mbr":{
+                "type":"asm",
+                "src":"src/boot/mbr.s"
+            },
+            "loader":{
+                "type":"asm",
+                "src":"src/boot/bootloader.s"
+            }
+        }
+    },
+    "build_kernel":{
+        "outdir":"out",
+        "command1":[],
+        "command2":[],
+        "var":{},
+        "items":{
+            "kernel":{
+                "type":"c",
+                "src":"kernel/kernel.c",
+                "includes":{
+
+                },
+                "compiler_argv":"-m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector -no-pie -fno-pic -Isrc/kernel",
+                "ld":"",
+                "ld_m":"",
+                "ld_o":"${outdir}/kernel.elf"
+            }
+        }
+    },
+    "write_img":{
+
+    }
+}

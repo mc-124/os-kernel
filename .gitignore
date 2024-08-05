@@ -1,0 +1,14 @@
+/.disabled
+/out
+*.o
+*~
+*.lock
+*.img
+.*
+/.*
+*.pyc
+/__pycache__
+!.gitignore
+!/.vscode
+*.elf
+*.out
