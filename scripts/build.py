@@ -14,7 +14,7 @@ import time
 import sys
 import re
 
-__version__ = "2024.08.05-2219"
+__version__ = "2024.08.06-2223"
 
 outdir = ''
 reps = {}
@@ -47,7 +47,8 @@ def fmtstr(string:str):
 # item.%s.ld_m
 
 def outfile(dir,src:str):
-    return join(dir,src.replace('/','!').replace('\\','!'))
+    #return join(dir,src.replace('/','!').replace('\\','!'))
+    return join(dir,"%s.o"%hex(hash(src)))
 
 def start(data:dict):
     global outdir,reps,conf_vars

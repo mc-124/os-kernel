@@ -12,3 +12,6 @@
 !/.vscode
 *.elf
 *.out
+*.log
+/img
+!empty_*.img

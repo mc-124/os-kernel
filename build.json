@@ -1,21 +1,34 @@
 {
-    "make_img":{
+    "mbr":{
         "outdir":"out",
-        "command1":[],
-        "command2":[],
+        "command1":[
+            "mkdir -p \"${outdir}\"",
+            "cp bochs/empty_10mb.img img/latest.img"
+        ],
+        "command2":[
+            "dd \"if=${item.mbr.out}\" of=img/latest.img seek=0 count=1 bs=512 conv=notrunc"
+        ],
         "var":{},
         "items":{
             "mbr":{
                 "type":"asm",
                 "src":"src/boot/mbr.s"
-            },
+            }
+        }
+    },
+    "loader":{
+        "outdir":"out",
+        "command1":[],
+        "command2":[],
+        "var":{},
+        "items":{
             "loader":{
                 "type":"asm",
                 "src":"src/boot/bootloader.s"
             }
         }
     },
-    "build_kernel":{
+    "kernel":{
         "outdir":"out",
         "command1":[],
         "command2":[],
@@ -34,7 +47,14 @@
             }
         }
     },
-    "write_img":{
-
+    "wimg":{
+        "outdir":"out",
+        "command1":[
+            "mkdir \"${outdir}\"",
+            "dd if=\"\" of=\"\" size=512 count=1 "
+        ],
+        "command2":[],
+        "var":{},
+        "items":{}
     }
 }
