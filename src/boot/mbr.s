@@ -1,8 +1,5 @@
+%include "src/boot/inc.s"
 org 0x7c00 ; MBR起始地址
-
-; vars
-LOADER_ADDR equ 0x900
-LOADER_START equ 0x2
 
 ; init
 mov ax,cs
