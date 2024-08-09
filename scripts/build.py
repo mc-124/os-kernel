@@ -10,11 +10,12 @@ from os import system
 from os.path import join,isfile,basename
 from traceback import print_exc as pexc
 import json
+import hashlib
 import time
 import sys
 import re
 
-__version__ = "2024.08.06-2223"
+__version__ = "2024.08.09-0954"
 
 outdir = ''
 reps = {}
@@ -48,7 +49,11 @@ def fmtstr(string:str):
 
 def outfile(dir,src:str):
     #return join(dir,src.replace('/','!').replace('\\','!'))
-    return join(dir,"%s.o"%hex(hash(src)))
+    return join(
+        dir,(
+            "%s.o"%hashlib.md5(src.encode()).hexdigest()
+            )
+        )
 
 def start(data:dict):
     global outdir,reps,conf_vars

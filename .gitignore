@@ -15,3 +15,7 @@
 *.log
 /img
 !empty_*.img
+desktop.ini
+*.bat
+*.lnk
+*.db

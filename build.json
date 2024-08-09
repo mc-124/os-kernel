@@ -19,7 +19,9 @@
     "loader":{
         "outdir":"out",
         "command1":[],
-        "command2":[],
+        "command2":[
+            "dd \"if=${item.loader.out}\" of=img/latest.img seek=1 count=8 bs=512 conv=notrunc"
+        ],
         "var":{},
         "items":{
             "loader":{
