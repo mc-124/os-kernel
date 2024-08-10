@@ -9,7 +9,7 @@ mov es,ax
 mov ss,ax
 mov fs,ax
 mov sp,0x7c00
-mov ax,0xb800 ; 显存地址
+mov ax,GRAM_ADDR ; 显存地址
 mov gs,ax
 
 ; 清屏
